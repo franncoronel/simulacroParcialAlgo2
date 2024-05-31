@@ -5,8 +5,8 @@ abstract class Restriccion {
 
     abstract fun cumpleCondicion(programa: Programa): Boolean
 
-    fun ejecutarAcciones() {
-        accionesAsociadas.forEach { it.tomarAccion() }
+    fun ejecutarAcciones(programa: Programa, grilla: Grilla) {
+        accionesAsociadas.forEach { it.tomarAccion(programa,grilla) }
     }
 }
 
