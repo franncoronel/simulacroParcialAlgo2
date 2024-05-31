@@ -35,6 +35,5 @@ class sponsorObserver(val messageSender: MessageSender) : ProgramaObserver {
 
 class revisionObserver : ProgramaObserver {
     override fun programaAgregado(programa: Programa, grilla: Grilla) {
-
     }
 }

@@ -30,5 +30,6 @@ open class Programa(
     fun extraerMailsConductores(): List<String> = conductores.map {it.mail}
 }
 
+data class Conductor(val nombre: String, var mail: String)
 //class LosSimpsons(): Programa()
 
