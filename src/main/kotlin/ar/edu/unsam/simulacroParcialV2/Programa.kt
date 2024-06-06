@@ -2,7 +2,7 @@ package ar.edu.unsam.simulacroParcialV2
 
 import java.time.DayOfWeek
 
-class Programa {
+open class Programa {
     var presupuesto = 200
     var titulo = "Hablemos Sin Saber"
     var conductores = mutableListOf<Conductor>()
@@ -12,7 +12,7 @@ class Programa {
     val restricciones = mutableListOf<Restriccion>()
     var duracion = 30
 
-    fun mailsConductores(): List<String> = conductores.map{ it.email }
+    fun mailsConductores(): List<String> = conductores.map { it.email }
     fun ratingPromedio(): Double = rating.average()
 
     fun mitadDuracion() = duracion / 2
@@ -29,10 +29,18 @@ class Programa {
     fun loConduce(nombreConductor: String): Boolean = nombresConductores().any { nombreConductor == it }
 
     fun nombresConductores(): List<String> = conductores.map { it.nombre }
+
     fun mitadPresupuesto(): Int = presupuesto / 2
+
     fun mitadConductores(): MutableList<Conductor> = conductores.take(conductores.size / 2).toMutableList()
-    fun otraMitadConductores(): MutableList<Conductor> = conductores.minus(mitadConductores().toSet()).toMutableList()
+
+    fun otraMitadConductores(): MutableList<Conductor> = conductores.minus(mitadConductores()).toMutableList()
+
     fun dividirTitulo(): List<String> = titulo.split(" ")
+}
+
+object losSimpson : Programa() {
+
 }
 
 data class Conductor(val nombre: String, val email: String)

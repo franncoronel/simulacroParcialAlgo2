@@ -32,7 +32,9 @@ class PartirPrograma() : AccionDeRevision() {
 
 class ReemplazarPorSimpsons() : AccionDeRevision() {
     override fun tomarAccion(programa: Programa, grilla: Grilla) {
-        TODO("Not yet implemented")
+        val losSimpsons = Programa().apply{
+
+        }
     }
 
 }

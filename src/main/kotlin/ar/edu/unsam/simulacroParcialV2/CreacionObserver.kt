@@ -4,8 +4,8 @@ interface CreacionObserver {
     fun programaAgregado(programa: Programa, grilla: Grilla)
 }
 
-class ConductorObserver(val mailSender: MailSender) {
-    fun programaAgregado(programa: Programa) {
+class ConductorObserver(val mailSender: MailSender): CreacionObserver {
+    override fun programaAgregado(programa: Programa, grilla: Grilla) {
         programa.mailsConductores().forEach {
             mailSender.sendMail(
                 Mail(
