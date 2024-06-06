@@ -5,6 +5,9 @@ abstract class Restriccion {
 
     abstract fun cumpleCondicion(programa: Programa): Boolean
 
+    fun ejecutarAcciones(programa: Programa, grilla: Grilla){
+        accionesAsociadas.forEach{ it.tomarAccion(programa, grilla) }
+    }
 }
 
 class MinimoRating(val limiteInferior: Int) : Restriccion() {

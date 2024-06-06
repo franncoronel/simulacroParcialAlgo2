@@ -32,7 +32,7 @@ class PresupuestoObserver(val messageSender: ShortMessageSender): CreacionObserv
 
 class ProgramasEnRevisionObserver(): CreacionObserver {
     override fun programaAgregado(programa: Programa, grilla: Grilla) {
-        TODO("Not yet implemented")
+        grilla.sincronizarProgramacion()
     }
 
 }
